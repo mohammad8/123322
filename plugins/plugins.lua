@@ -39,7 +39,7 @@ local function list_all_plugins(only_enabled)
       text = text..nsum..'. '..v..'  '..status..'\n'
     end
   end
-  local text = text..'\nاین '..nsum..' نصب شده است.\n'..nact..' پلاگین های فعال و '..nsum-nact..' غیر فعال'
+  local text = text..'\nاین '..nsum..' پلاگین ها نصب شده است.\n'..nact..' پلاگین های فعال و '..nsum-nact..' غیر فعال'
   return text
 end
 
@@ -48,23 +48,23 @@ local function list_plugins(only_enabled)
   local nsum = 0
   for k, v in pairs( plugins_names( )) do
     --  ☑️ enabled, 🔘 disabled
-    local status = '🔘'
+    local status = 'غیر فعال'
     nsum = nsum+1
     nact = 0
     -- Check if is enabled
     for k2, v2 in pairs(_config.enabled_plugins) do
       if v == v2..'.lua' then 
-        status = '☑️' 
+        status = 'فعال' 
       end
       nact = nact+1
     end
-    if not only_enabled or status == '☑️' then
+    if not only_enabled or status == 'فعال' then
 
       v = string.match (v, "(.*)%.lua")
       text = text..v..'  '..status..'\n'
     end
   end
-  local text = text..'\n'..nact..' پلاگین های فعال '..nsum..' پلاگین ها نصب شده است.'
+  local text = text..'\n'..nact..' پلاگین ها فعال هستند  '..nsum..' پلاگین نصب شده است.'
   return text
 end
 
@@ -79,7 +79,7 @@ local function enable_plugin( plugin_name )
   print('checking if '..plugin_name..' exists')
 
   if plugin_enabled(plugin_name) then
-    return 'Plugin '..plugin_name..' is enabled'
+    return 'پلاگین '..plugin_name..' فعال بود'
   end
 
   if plugin_exists(plugin_name) then
@@ -90,7 +90,7 @@ local function enable_plugin( plugin_name )
 
     return reload_plugins( )
   else
-    return 'پلاگین '..plugin_name..'وجود ندارد'
+    return 'پلاگین '..plugin_name..' وجود ندارد'
   end
 end
 
@@ -112,7 +112,7 @@ end
 
 local function disable_plugin_on_chat(receiver, plugin)
   if not plugin_exists(plugin) then
-    return "پلاگین فعال نیست"
+    return "پلاگین وجود ندارد"
   end
 
   if not _config.disabled_plugin_on_chat then
@@ -178,7 +178,7 @@ local function run(msg, matches)
 
   if matches[1] == '-' and is_sudo(msg) then
     if matches[2] == 'plugins' then
-     return 'این امکان وجود ندارد'
+     return 'این دستور توان انجام شدن ندارد!'
     end
     print("disable: "..matches[2])
     return disable_plugin(matches[2])
@@ -204,12 +204,12 @@ return {
           "pl reload : reloads all plugins." },
           },
   patterns = {
-    "^/pllist$",
-    "^/(pl) (+) ([%w_%.%-]+)$",
-    "^/(pl) (+) ([%w_%.%-]+) (chat)",
-    "^/(pl) (-) ([%w_%.%-]+)$",
-    "^/(pl) (-) ([%w_%.%-]+) (chat)",
-    "^/(pl) (*)$" },
+    "^[/!](pl)ist$",
+    "^[/!]pl? (+) ([%w_%.%-]+)$",
+    "^[/!]pl? (+) ([%w_%.%-]+) (chat)",
+    "^[/!]pl? (-) ([%w_%.%-]+)$",
+    "^[/!]pl? (-) ([%w_%.%-]+) (chat)",
+    "^[/!]pl? (*)$" },
   run = run,
   moderated = true, 
 
