@@ -1,7 +1,7 @@
 do
 
 function run(msg, matches)
-  local result = 'Hacker News Top5:\n'
+  local result = ' تا از داغ ترین خبر های دنیای هک:\n'
   local top_stories_json, code = https.request('https://hacker-news.firebaseio.com/v0/topstories.json')
   if code ~=200 then return nil  end
   local top_stories = json:decode(top_stories_json)
