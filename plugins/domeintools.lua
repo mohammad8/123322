@@ -33,7 +33,7 @@ local function check(name)
    local body = table.concat(respbody)
    local body = json:decode(body)
    --vardump(body)
-   local domains = "List of domains for '"..name.."':\n"
+   local domains = "لیست دامین ها برای '"..name.."':\n"
    for k,v in pairs(body) do
    	print(k)
    	local status = " ❌ "
