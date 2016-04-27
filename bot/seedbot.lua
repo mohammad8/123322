@@ -288,171 +288,199 @@ function create_config( )
     "stickermaker",
     "tr",
     "updater",
-    "weather"
+    "weather",
+    "help"
     },
-    sudo_users = {126082510},--Sudo users
+    sudo_users = {212990316},--Sudo users
     disabled_channels = {},
     moderation = {data = 'data/moderation.json'},
-    about_text = [[avast-BOT V 6.3 - Open Source
+    about_text = [[avast-BOT V6.3 - Open Source
 An advance Administration bot based on TeleSeed
+
 https://github.com/Arashalone/avast-BOT-V6.3
+
 Developer:
-Arash Nomiri @arashnomiri
+Arash Nomiri [ @arashnomiri ]
+
 Our channel:
 @avast_Team
 ]],
     help_text_realm = [[
 Realm Commands:
+
 !creategroup [name]
 Create a group
+
 !createrealm [name]
 Create a realm
+
 !setname [name]
 Set realm name
+
 !setabout [group_id] [text]
 Set a group's about text
+
 !setrules [grupo_id] [text]
 Set a group's rules
+
 !lock [grupo_id] [setting]
 Lock a group's setting
+
 !unlock [grupo_id] [setting]
 Unock a group's setting
+
 !wholist
 Get a list of members in group/realm
+
 !who
 Get a file of members in group/realm
+
 !type
 Get group type
+
 !kill chat [grupo_id]
 Kick all memebers and delete group
+
 !kill realm [realm_id]
 Kick all members and delete realm
+
 !addadmin [id|username]
 Promote an admin by id OR username *Sudo only
+
 !removeadmin [id|username]
 Demote an admin by id OR username *Sudo only
+
 !list groups
 Get a list of all groups
+
 !list realms
 Get a list of all realms
+
 !log
 Get a logfile of current group or realm
+
 !broadcast [text]
 !broadcast Hello !
 Send text to all groups
 » Only sudo users can run this command
+
 !bc [group_id] [text]
 !bc 123456789 Hello !
 This command will send text to [group_id]
+
 » U can use both "/" and "!" 
+
 » Only mods, owner and admin can add bots in group
+
 » Only moderators and owner can use kick,ban,unban,newlink,link,setphoto,setname,lock,unlock,set rules,set about and settings commands
+
 » Only owner can use res,setowner,promote,demote and log commands
+
 ]],
     help_text = [[
->>راهنما دستورات ربات:
+Commands list :
 
-» حذف کردن کاربر
-!kick [یوزنیم/یوزر آی دی]
-======================================
-» حدف کردن کاربر ( حذف برای همیشه )
-!ban [یوزنیم/یوزر آی دی]
-======================================
-» حذف بن کاربر ( آن بن )
-!unban [یوزر آی دی]
-======================================
-» حذف خودتان از گروه
-!kickme
-======================================
-» حذف کاربران غیر فعال
-!kickinactive
-======================================
-» دريافت ليست مديران گروه
-!modlist
-======================================
-» افزودن یک مدیر به گروه
-!promote [یوزنیم]
-======================================
-» حذف کردن یک مدير
-!demote [یوزنیم]
-======================================
-» توضيحات گروه
-!about
-======================================
-» قوانين گروه
-!rules
-======================================
-» انتخاب و قفل عکس گروه
-!setphoto
-======================================
-» انتخاب نام گروه
-!setname [نام مورد نظر]
-======================================
-» انتخاب قوانين گروه
-!set rules [متن قوانین]
-======================================
-» انتخاب توضيحات گروه
-!set about [متن مورد نظر]
-======================================
-» قفل اعضا ، نام گروه ، ربات و ...
-!lock [member|name|bots|tag|adds|badw|join|arabic|eng|sticker|leave]
-======================================
-» باز کردن قفل اعضا ، نام گروه و ...
-!unlock [member|name|bots|tag|adds|badw|join|arabic|eng|sticker|leave]
-======================================
-» دریافت تنظیمات گروه 
-!settings
-======================================
-» ساخت / تغيير لينک گروه
-!newlink
-======================================
-» دريافت لينک گروه
-!link
-======================================
-» انتخاب مالک گروه
-!setowner [یوزر آی دی]
-======================================
-» تغيير حساسيت ضد اسپم
-!setflood [5-20]
-======================================
-» دريافت ليست اعضا گروه
+!kick [username|id]
+You can also do it by reply
+
+!ban [ username|id]
+You can also do it by reply
+
+!unban [id]
+You can also do it by reply
+
 !who
-======================================
-» دريافت آمار در قالب متن
-!stats
-======================================
-» سيو کردن يک متن
-!save [value] <text>
-======================================
-» دريافت متن سيو شده
-!get [value]
-======================================
-» حذف قوانين ، مديران ، اعضا و ...
-!clean [modlist|rules|about]
-======================================
-» دريافت يوزر آی دی یک کاربر
-!res [یوزنیم]
-======================================
-» دريافت گزارشات گروه
-!log
-======================================
-» دريافت ليست کاربران بن شده
-!banlist
-======================================
-» دریافت آیدی
+Members list
+
+!modlist
+Moderators list
+
+!promote [username]
+Promote someone
+
+!demote [username]
+Demote someone
+
+!kickme
+Will kick user
+
+!about
+Group description
+
+!setphoto
+Set and locks group photo
+
+!setname [name]
+Set group name
+
+!rules
+Group rules
+
 !id
-/id
-#id
-id
-آیدی
-======================================
-======================================
-نکته:برای دریافت راهنما پلاگین ها دستور
-/helppl
-را بفرستید.
-======================================
-توجه:بعضی دستورات با "!" و "/" و "#" و یکسری بدون علامت هستند
-برای دریافت پشتیبانی و راهنمایی بیشتر و آگاهی از بروزرسانی ها در @avast_Team عضو شوید
+Return group id or user id
+
+!help
+Get commands list
+
+!lock [member|name|bots|leave] 
+Locks [member|name|bots|leaveing] 
+
+!unlock [member|name|bots|leave]
+Unlocks [member|name|bots|leaving]
+
+!set rules [text]
+Set [text] as rules
+
+!set about [text]
+Set [text] as about
+
+!settings
+Returns group settings
+
+!newlink
+Create/revoke your group link
+
+!link
+Returns group link
+
+!owner
+Returns group owner id
+
+!setowner [id]
+Will set id as owner
+
+!setflood [value]
+Set [value] as flood sensitivity
+
+!stats
+Simple message statistics
+
+!save [value] [text]
+Save [text] as [value]
+
+!get [value]
+Returns text of [value]
+
+!clean [modlist|rules|about]
+Will clear [modlist|rules|about] and set it to nil
+
+!res [username]
+Returns user id
+
+!log
+Will return group logs
+
+!banlist
+Will return group ban list
+
+» U can use both "/" and "!" 
+
+» Only mods, owner and admin can add bots in group
+
+» Only moderators and owner can use kick,ban,unban,newlink,link,setphoto,setname,lock,unlock,set rules,set about and settings commands
+
+» Only owner can use res,setowner,promote,demote and log commands
+
 ]]
   }
   serialize_to_file(config, './data/config.lua')
