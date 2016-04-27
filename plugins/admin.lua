@@ -126,11 +126,11 @@ local function run(msg,matches)
     if matches[1] == "markread" then
     	if matches[2] == "on" then
     		redis:set("bot:markread", "on")
-    		return "Mark read > on"
+    		return "خواندن پیام ها:روشن"
     	end
     	if matches[2] == "off" then
     		redis:del("bot:markread")
-    		return "Mark read > off"
+    		return "خواندن پیام ها:خاموش"
     	end
     	return
     end
@@ -158,15 +158,15 @@ local function run(msg,matches)
       return "لیست شماره هارا در خصوصی برای شما ارسال کردم"
     end
     if matches[1] == "addcontact" and matches[2] then    add_contact(matches[2],matches[3],matches[4],ok_cb,false)
-      return "Number "..matches[2].." add from contact list"
+      return "شماره "..matches[2].." در لیست شماره ها ذخیره شد"
     end
     if matches[1] == "delcontact" then
       del_contact("user#id"..matches[2],ok_cb,false)
-      return "User "..matches[2].." removed from contact list"
+      return "شماره کاربر "..matches[2].." از لیست شماره ها حذف شد"
     end
     if matches[1] == "dialoglist" then
       get_dialog_list(get_dialog_list_callback, {target = msg.from.id})
-      return "I've sent dialog list with both json and text format to your private"
+      return "من شماره هارا به علاوه یکسری چیز دیگر به پی وی شما ارسال کردم"
     end
     if matches[1] == "whois" then
       user_info("user#id"..matches[2],user_info_callback,{msg=msg})
