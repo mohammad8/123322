@@ -7,7 +7,7 @@ local function create_group(msg)
         if is_sudo(msg) or is_realm(msg) and is_admin(msg) then
                 local group_creator = msg.from.print_name
                 create_group_chat (group_creator, group_name, ok_cb, false)
-                return 'Group [ '..string.gsub(group_name, '_', ' ')..' ] has been created.'
+                return 'گروه [ '..string.gsub(group_name, '_', ' ')..' ] ساخته شد'
         end
 end
 
@@ -16,7 +16,7 @@ local function create_realm(msg)
         if is_sudo(msg) or is_realm(msg) and is_admin(msg) then
                 local group_creator = msg.from.print_name
                 create_group_chat (group_creator, group_name, ok_cb, false)
-                return 'Realm [ '..string.gsub(group_name, '_', ' ')..' ] has been created.'
+                return 'ریلم [ '..string.gsub(group_name, '_', ' ')..' ] ساخته شد'
         end
 end
 
@@ -43,12 +43,12 @@ local function get_group_type(msg)
   local data = load_data(_config.moderation.data)
   if data[tostring(msg.to.id)] then
     if not data[tostring(msg.to.id)]['group_type'] then
-     return 'No group type available.'
+     return 'هیچ حالتی برای گروه تنطیم نشده است.'
     end
      local group_type = data[tostring(msg.to.id)]['group_type']
      return group_type
   else 
-     return 'Chat type not found.'
+     return 'گروه پیدا نشد.'
   end 
 end
 
@@ -63,7 +63,7 @@ end
 
 local function set_description(msg, data, target, about)
     if not is_admin(msg) then
-        return "For admins only!"
+        return "فقط مدیران!"
     end
     local data_cat = 'description'
         data[tostring(target)][data_cat] = about
@@ -595,7 +595,7 @@ function run(msg, matches)
 		if matches[1] == 'addadmin' then
 			if string.match(matches[2], '^%d+$') then
 				local admin_id = matches[2]
-				print("user "..admin_id.." has been promoted as admin")
+				print("user "..admin_id.." به مقام ادمین دست یافت")
 				return admin_promote(msg, admin_id)
 			else
 			local member = string.gsub(matches[2], "@", "")
@@ -606,7 +606,7 @@ function run(msg, matches)
 		if matches[1] == 'removeadmin' then
 			if string.match(matches[2], '^%d+$') then
 				local admin_id = matches[2]
-				print("user "..admin_id.." has been demoted")
+				print("user "..admin_id.." از ادمینی بر کنار شد")
 				return admin_demote(msg, admin_id)
 			else
 			local member = string.gsub(matches[2], "@", "")
@@ -625,11 +625,11 @@ function run(msg, matches)
                   if msg.to.type == 'chat' then
 			groups_list(msg)
 		        send_document("chat#id"..msg.to.id, "./groups/lists/groups.txt", ok_cb, false)	
-			return "Group list created" --group_list(msg)
+			return "لیست گروه ها ساخته شد" --group_list(msg)
                    elseif msg.to.type == 'user' then 
                         groups_list(msg)
 		        send_document("user#id"..msg.from.id, "./groups/lists/groups.txt", ok_cb, false)	
-			return "Group list created" --group_list(msg)
+			return "لیست گروه ها ساخته شد" --group_list(msg)
                   end
 		end
 		if matches[1] == 'list' and matches[2] == 'realms' then
