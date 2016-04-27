@@ -233,9 +233,9 @@ function create_config( )
 An advance Administration bot based on TeleSeed
 https://github.com/Arashalone/avast-BOT-V6.3
 Developer:
-Our channels:
-English: @TeleSeedCH
-Persian: @IranSeed
+Arash Nomiri @arashnomiri
+Our channel:
+@avast_Team
 ]],
     help_text_realm = [[
 Realm Commands:
@@ -286,73 +286,109 @@ This command will send text to [group_id]
 » Only owner can use res,setowner,promote,demote and log commands
 ]],
     help_text = [[
-Commands list :
-!kick [username|id]
-You can also do it by reply
-!ban [ username|id]
-You can also do it by reply
-!unban [id]
-You can also do it by reply
-!who
-Members list
-!modlist
-Moderators list
-!promote [username]
-Promote someone
-!demote [username]
-Demote someone
+>>راهنما دستورات ربات:
+
+» حذف کردن کاربر
+!kick [یوزنیم/یوزر آی دی]
+======================================
+» حدف کردن کاربر ( حذف برای همیشه )
+!ban [یوزنیم/یوزر آی دی]
+======================================
+» حذف بن کاربر ( آن بن )
+!unban [یوزر آی دی]
+======================================
+» حذف خودتان از گروه
 !kickme
-Will kick user
+======================================
+» حذف کاربران غیر فعال
+!kickinactive
+======================================
+» دريافت ليست مديران گروه
+!modlist
+======================================
+» افزودن یک مدیر به گروه
+!promote [یوزنیم]
+======================================
+» حذف کردن یک مدير
+!demote [یوزنیم]
+======================================
+» توضيحات گروه
 !about
-Group description
-!setphoto
-Set and locks group photo
-!setname [name]
-Set group name
+======================================
+» قوانين گروه
 !rules
-Group rules
-!id
-Return group id or user id
-!help
-Get commands list
-!lock [member|name|bots|leave] 
-Locks [member|name|bots|leaveing] 
-!unlock [member|name|bots|leave]
-Unlocks [member|name|bots|leaving]
-!set rules [text]
-Set [text] as rules
-!set about [text]
-Set [text] as about
+======================================
+» انتخاب و قفل عکس گروه
+!setphoto
+======================================
+» انتخاب نام گروه
+!setname [نام مورد نظر]
+======================================
+» انتخاب قوانين گروه
+!set rules [متن قوانین]
+======================================
+» انتخاب توضيحات گروه
+!set about [متن مورد نظر]
+======================================
+» قفل اعضا ، نام گروه ، ربات و ...
+!lock [member|name|bots|tag|adds|badw|join|arabic|eng|sticker|leave]
+======================================
+» باز کردن قفل اعضا ، نام گروه و ...
+!unlock [member|name|bots|tag|adds|badw|join|arabic|eng|sticker|leave]
+======================================
+» دریافت تنظیمات گروه 
 !settings
-Returns group settings
+======================================
+» ساخت / تغيير لينک گروه
 !newlink
-Create/revoke your group link
+======================================
+» دريافت لينک گروه
 !link
-Returns group link
-!owner
-Returns group owner id
-!setowner [id]
-Will set id as owner
-!setflood [value]
-Set [value] as flood sensitivity
+======================================
+» انتخاب مالک گروه
+!setowner [یوزر آی دی]
+======================================
+» تغيير حساسيت ضد اسپم
+!setflood [5-20]
+======================================
+» دريافت ليست اعضا گروه
+!who
+======================================
+» دريافت آمار در قالب متن
 !stats
-Simple message statistics
-!save [value] [text]
-Save [text] as [value]
+======================================
+» سيو کردن يک متن
+!save [value] <text>
+======================================
+» دريافت متن سيو شده
 !get [value]
-Returns text of [value]
+======================================
+» حذف قوانين ، مديران ، اعضا و ...
 !clean [modlist|rules|about]
-Will clear [modlist|rules|about] and set it to nil
-!res [username]
-Returns user id
+======================================
+» دريافت يوزر آی دی یک کاربر
+!res [یوزنیم]
+======================================
+» دريافت گزارشات گروه
 !log
-Will return group logs
+======================================
+» دريافت ليست کاربران بن شده
 !banlist
-Will return group ban list
-» U can use both "/" and "!" 
-» Only mods, owner and admin can add bots in group
-» Only moderators and owner can use kick,ban,unban,newlink,link,setphoto,setname,lock,unlock,set rules,set about and settings commands
-» Only owner can use res,setowner,promote,demote and log commands
+======================================
+» دریافت آیدی
+!id
+/id
+#id
+id
+آیدی
+======================================
+======================================
+نکته:برای دریافت راهنما پلاگین ها دستور
+/helppl
+را بفرستید.
+======================================
+توجه:بعضی دستورات با "!" و "/" و "#" و یکسری بدون علامت هستند
+برای دریافت پشتیبانی و راهنمایی بیشتر و آگاهی از بروزرسانی ها در @avast_Team عضو شوید
 ]]
   }
   serialize_to_file(config, './data/config.lua')
