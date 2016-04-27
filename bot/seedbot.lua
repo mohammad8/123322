@@ -273,7 +273,7 @@ function create_config( )
     "welcome",
     "ads",
     "agif",
-    "arz"
+    "arz",
     "avast_member",
     "banner",
     "chat",
