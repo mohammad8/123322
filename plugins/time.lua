@@ -81,11 +81,11 @@ function getformattedLocalTime(area)
 
   lat,lng,acc = get_latlong(area)
   if lat == nil and lng == nil then
-    return 'It seems that in "'..area..'" they do not have a concept of time.'
+    return 'زمان برای  "'..area..'" نصب نشده است'
   end
   local localTime, timeZoneId = get_time(lat,lng)
 
-  return "The local time in "..timeZoneId.." is: ".. os.date(dateFormat,localTime) 
+  return "زمان در  "..timeZoneId.." هست : ".. os.date(dateFormat,localTime) 
 end
 
 function run(msg, matches)
