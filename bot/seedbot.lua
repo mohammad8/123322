@@ -224,86 +224,32 @@ function create_config( )
     "invite",
     "all",
     "leave_ban",
-    "admin",
-    "9gag",
-    "addplug",
-    "boobs",
-    "bugziila",
-    "calc",
-    "chuck",
-    "domeintools",
-    "downloader",
-    "eur",
-    "expand",
-    "face",
-    "filtering",
-    "fullid",
-    "fw",
-    "giphy",
-    "github",
-    "google",
-    "gps",
-    "hackernews",
-    "info",
-    "ip",
-    "linkpv",
-    "location",
-    "lock_ads",
-    "lyrics",
-    "magic8ball",
-    "map",
-    "media",
-    "mywai",
-    "plugins",
-    "rss",
-    "send",
-    "setloc",
-    "share",
-    "spam",
-    "spammer",
-    "support",
-    "tagall",
-    "text",
-    "time",
-    "translate",
-    "trivia",
-    "version",
-    "vote",
-    "webshot",
-    "welcome",
-    "ads",
-    "agif",
-    "arz"
-    "avast_member",
-    "banner",
-    "chat",
-    "cmap",
-    "cpu",
-    "helpplugs",
-    "helps",
-    "quickself",
-    "searchyoutube",
-    "set_type",
-    "setsticker",
-    "stickermaker",
-    "tr",
-    "updater",
-    "weather",
-    "help"
+    "admin"
     },
-    sudo_users = {212990316},--Sudo users
+    sudo_users = {110626080,103649648,143723991,111020322,0,tonumber(our_id)},--Sudo users
     disabled_channels = {},
     moderation = {data = 'data/moderation.json'},
-    about_text = [[avast-BOT V6.3 - Open Source
-An advance Administration bot based on TeleSeed
+    about_text = [[Teleseed v2 - Open Source
+An advance Administration bot based on yagop/telegram-bot 
 
-https://github.com/Arashalone/avast-BOT-V6.3
+https://github.com/SEEDTEAM/TeleSeed
 
-Developer:
-Arash Nomiri [ @arashnomiri ]
+Our team!
+Alphonse (@Iwals)
+I M /-\ N (@Imandaneshi)
+Siyanew (@Siyanew)
+Rondoozle (@Potus)
+Seyedan (@Seyedan25)
 
-Our channel:
-@avast_Team
+Special thanks to:
+Juan Potato
+Siyanew
+Topkecleon
+Vamptacus
+
+Our channels:
+English: @TeleSeedCH
+Persian: @IranSeed
 ]],
     help_text_realm = [[
 Realm Commands:
