@@ -377,7 +377,8 @@ This command will send text to [group_id]
 » Only owner can use res,setowner,promote,demote and log commands
 
 ]],
-    help_text = [[]]
+    help_text = [[
+]]
   }
   serialize_to_file(config, './data/config.lua')
   print('saved config into ./data/config.lua')
