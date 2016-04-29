@@ -220,7 +220,7 @@ local function show_group_settingsmod(msg, data, target)
     	leave_ban = data[tostring(msg.to.id)]['settings']['leave_ban']
    	end
   local settings = data[tostring(target)]['settings']
-  local text = "›Group Settings:\n>>Kick join new member with link : "..settings.lock_join.."\n>>Lock group Fosh : "..settings.antifosh.."\n>>Lock group chat : "..settings.lock_chat.."\n>>Lock group ads : "..settings.antiads.."\n>>Lock group name : "..settings.lock_name.."\n>>Lock group photo : "..settings.lock_photo.."\n>>Lock add new member : "..settings.lock_member.."\n>>Lock leave : "..leave_ban.."\n>>flood set on : "..NUM_MSG_MAX.."\n>>Bot can come : "..bots_protection.."\nGroup model:Normal\nBot Version:6.4"
+  local text = "⚙›Group Settings:\n>>Kick join new member with link : "..settings.lock_join.."\n>>Lock group Fosh : "..settings.antifosh.."\n>>Lock group chat : "..settings.lock_chat.."\n>>Lock group ads : "..settings.antiads.."\n>>Lock group name : "..settings.lock_name.."\n>>Lock group photo : "..settings.lock_photo.."\n>>Lock add new member : "..settings.lock_member.."\n>>Lock leave : "..leave_ban.."\n>>flood set on : "..NUM_MSG_MAX.."\n>>Bot can come : "..bots_protection.."\n \n>Group model:Normal\n>Bot Version:6.4"
   return text
 end
 
@@ -248,11 +248,11 @@ local function lock_group_chat(msg, data, target)
   end
   local group_chat_lock = data[tostring(target)]['settings']['lock_chat']
   if group_chat_lock == 'yes' then
-    return 'chat=kick is already locked'
+    return 'chat is already locked'
   else
     data[tostring(target)]['settings']['lock_chat'] = 'yes'
     save_data(_config.moderation.data, data)
-    return 'chat=kick has been locked'
+    return 'chat has been locked'
   end
 end
 
@@ -262,11 +262,11 @@ local function unlock_group_chat(msg, data, target)
   end
   local group_chat_lock = data[tostring(target)]['settings']['lock_chat']
   if group_chat_lock == 'no' then
-    return 'chat=kick is already unlocked'
+    return 'chat is already unlocked'
   else
     data[tostring(target)]['settings']['lock_chat'] = 'no'
     save_data(_config.moderation.data, data)
-    return 'chat=kick has been unlocked'
+    return 'chat has been unlocked'
   end
 end
 
