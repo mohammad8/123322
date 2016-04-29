@@ -10,7 +10,7 @@ local function check_member_autorealm(cb_extra, success, result)
     if member_id ~= our_id then
       -- Group configuration
       data[tostring(msg.to.id)] = {
-        group_type = 'Realm',
+        group_type = 'ریلم',
         settings = {
           set_name = string.gsub(msg.to.print_name, '_', ' '),
           lock_join = 'no',
@@ -31,7 +31,7 @@ local function check_member_autorealm(cb_extra, success, result)
       end
       data[tostring(realms)][tostring(msg.to.id)] = msg.to.id
       save_data(_config.moderation.data, data)
-      return send_large_msg(receiver, 'Welcome to your new realm !')
+      return send_large_msg(receiver, 'به ریلم جدید خوش آمدید!')
     end
   end
 end
@@ -44,7 +44,7 @@ local function check_member_realm_add(cb_extra, success, result)
     if member_id ~= our_id then
       -- Group configuration
       data[tostring(msg.to.id)] = {
-        group_type = 'Realm',
+        group_type = 'ریلم',
         settings = {
           set_name = string.gsub(msg.to.print_name, '_', ' '),
           lock_join = 'no',
@@ -65,7 +65,7 @@ local function check_member_realm_add(cb_extra, success, result)
       end
       data[tostring(realms)][tostring(msg.to.id)] = msg.to.id
       save_data(_config.moderation.data, data)
-      return send_large_msg(receiver, 'Realm has been added!')
+      return send_large_msg(receiver, 'ریلم اضافه شد!')
     end
   end
 end
@@ -101,7 +101,7 @@ function check_member_group(cb_extra, success, result)
       end
       data[tostring(groups)][tostring(msg.to.id)] = msg.to.id
       save_data(_config.moderation.data, data)
-      return send_large_msg(receiver, 'You have been promoted as the owner.')
+      return send_large_msg(receiver, 'شما به مقام صاحب گروه ارتقا یافتید.')
     end
   end
 end
@@ -114,7 +114,7 @@ local function check_member_modadd(cb_extra, success, result)
     if member_id ~= our_id then
       -- Group configuration
       data[tostring(msg.to.id)] = {
-        group_type = 'Group',
+        group_type = 'گروه',
         moderators = {},
         set_owner = member_id ,
         settings = {
@@ -137,7 +137,7 @@ local function check_member_modadd(cb_extra, success, result)
       end
       data[tostring(groups)][tostring(msg.to.id)] = msg.to.id
       save_data(_config.moderation.data, data)
-      return send_large_msg(receiver, 'Group is added and you have been promoted as the owner ')
+      return send_large_msg(receiver, 'گروه اضافه شد و شما به مقام صاحب گروه ارتقا یافتید ')
     end
   end
 end
@@ -172,7 +172,7 @@ local function check_member_realmrem(cb_extra, success, result)
       end
       data[tostring(realms)][tostring(msg.to.id)] = nil
       save_data(_config.moderation.data, data)
-      return send_large_msg(receiver, 'Realm has been removed!')
+      return send_large_msg(receiver, 'ریلم پاک شد!')
     end
   end
 end
@@ -193,14 +193,14 @@ local function check_member_modrem(cb_extra, success, result)
       end
       data[tostring(groups)][tostring(msg.to.id)] = nil
       save_data(_config.moderation.data, data)
-      return send_large_msg(receiver, 'Group has been removed')
+      return send_large_msg(receiver, 'گروه از لیست گروه ها پاک شد')
     end
   end
 end
 --End Check Member
 local function show_group_settingsmod(msg, data, target)
  	if not is_momod(msg) then
-    	return "For moderators only!"
+    	return "فقط مدیران!"
   	end
   	local data = load_data(_config.moderation.data)
     if data[tostring(msg.to.id)] then
