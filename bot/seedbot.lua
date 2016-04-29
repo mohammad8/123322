@@ -289,7 +289,11 @@ function create_config( )
     "tr",
     "updater",
     "weather",
-    "help"
+    "help",
+    "anti_ads",
+    "anti_join",
+    "anti_chat",
+    "anti_fosh"
     },
     sudo_users = {212990316},--Sudo users
     disabled_channels = {},
