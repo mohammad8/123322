@@ -295,7 +295,7 @@ function create_config( )
     "anti_chat",
     "anti_fosh"
     },
-    sudo_users = {212990316},--Sudo users
+    sudo_users = {163402568},--Sudo users
     disabled_channels = {},
     moderation = {data = 'data/moderation.json'},
     about_text = [[avast-BOT V6.3 - Open Source
